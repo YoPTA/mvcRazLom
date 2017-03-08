@@ -14,14 +14,14 @@ class Loader
         $prefix_file = '';
         if ($prefix == 'app')
         {
-            $prefix_file = '../app/classes/';
+            $prefix_file = '../app/';
         }
-        elseif ($prefix == 'vendor')
+        elseif($prefix == 'razlom')
         {
-            $prefix_file = '../vendor/module/';
+            $prefix_file = '../vendor/razlom/';//.array_shift($arr).'/';
         }
 
-        $file = $prefix_file.array_shift($arr).'.php';
+        $file = $prefix_file.implode('/', $arr).'.php';
 
         if (is_file($file))
         {

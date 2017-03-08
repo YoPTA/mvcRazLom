@@ -1,14 +1,10 @@
 <?php
 
-use app\Room;
-use vendor\GoodRoom;
-
-require '../app/classes/Loader.php';
+require '../vendor/razlom/core/Loader.php';
 
 $loader = new Loader();
 
 spl_autoload_register([$loader, 'loadClass']);
 
-$myRoom = new Room();
-echo $myRoom->form . '<br>';
-echo $myRoom->getWindows() . '<br>';
+$router = new \razlom\core\Router();
+$router->start();
